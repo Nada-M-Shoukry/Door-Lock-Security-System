@@ -11,6 +11,7 @@
 
 
 
+
 	void UART_init(const UART_ConfigType * config_ptr)
 	{
 		uint16 ubrr_value = 0;
@@ -18,7 +19,7 @@
 		UCSRA = (1<<U2X);                              /* U2X = 1 for double transmission speed */
 
 
-		UCSRB = (1<<RXEN) | (1<<TXEN);                 /************************** UCSRB Description **************************
+		UCSRB = (1<<RXEN) | (1<<TXEN);    /************************** UCSRB Description **************************
 		                                                * RXCIE = 0 Disable USART RX Complete Interrupt Enable
 		                                                * TXCIE = 0 Disable USART Tx Complete Interrupt Enable
 		                                                * UDRIE = 0 Disable USART Data Register Empty Interrupt Enable

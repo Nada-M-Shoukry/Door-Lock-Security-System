@@ -12,9 +12,9 @@
 
 /********************* Global Variables *******************/
 
-static  void (*g_Timer0_CallBackPtr)(void) = NULL_PTR;                  /* Global variables to hold the address of the call back function in the application */
-static  void (*g_Timer1_CallBackPtr)(void) = NULL_PTR;
-static  void (*g_Timer2_CallBackPtr)(void) = NULL_PTR;
+static volatile void (*g_Timer0_CallBackPtr)(void) = NULL_PTR;                  /* Global variables to hold the address of the call back function in the application */
+static volatile void (*g_Timer1_CallBackPtr)(void) = NULL_PTR;
+static volatile void (*g_Timer2_CallBackPtr)(void) = NULL_PTR;
 
 /******************* ISRs *********************************/
 
@@ -69,7 +69,8 @@ ISR (TIMER2_COMP_vect)
 
 /***************** Functions Definitions ******************/
 
-void Timer_init(const Timer_ConfigType * config_ptr){
+void Timer_init(const Timer_ConfigType * config_ptr)
+{
 
 
 	switch (config_ptr->timer_ID)
@@ -190,6 +191,7 @@ void Timer_init(const Timer_ConfigType * config_ptr){
 		break;
 	}
 }
+
 	void Timer_deInit(Timer_ID_Type timer_type)
 	{
 		switch (timer_type)

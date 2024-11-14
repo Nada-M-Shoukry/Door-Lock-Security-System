@@ -44,7 +44,7 @@ typedef struct
 
 /******************** Functions Prototypes **********************/
 
- void Timer_init(const Timer_ConfigType * config_ptr);
+ void Timer_init(const Timer_ConfigType * Config_Ptr);
 
  void Timer_deInit(Timer_ID_Type timer_type);
 
